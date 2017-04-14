@@ -84,7 +84,7 @@ io.on('connection', function (socket) {
 		socket.broadcast.emit('other player connected',currentPlayer);
 	});
 
-	socket.on('player move',function(date)
+	socket.on('player move',function(data)
 		{
 			console.log('recv:move:'+JSON.stringify(data));
 			currentPlayer.position = data.position;
@@ -100,7 +100,7 @@ io.on('connection', function (socket) {
 		}
 	);
 
-	socket.on('player shoot',function(data)
+	socket.on('player shoot',function()
 	{
 		console.log(currentPlayer.name+' recv: shoot');
 		var data = 
